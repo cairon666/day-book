@@ -1,0 +1,12 @@
+.git
+.github
+.opencode
+openspec
+node_modules
+**/node_modules
+**/dist
+.env
+.env.*
+*.md
+.graphifyignore
+docker-compose.yml

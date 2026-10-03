@@ -1,0 +1,18 @@
+# dependencies
+node_modules/
+
+# build output
+apps/*/dist/
+
+# env & secrets
+.env
+.env.*
+!.env.example
+
+# misc
+.DS_Store
+*.local
+*.log
+
+# local tooling
+.opencode/

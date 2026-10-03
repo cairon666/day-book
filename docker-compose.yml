@@ -1,0 +1,12 @@
+services:
+  web:
+    # Локально: образ собирается из исходников (day-book-web:local).
+    # На сервере: в .env рядом с этим файлом задаётся
+    # WEB_IMAGE=ghcr.io/<OWNER>/<REPO>/web:main
+    image: ${WEB_IMAGE:-day-book-web:local}
+    build:
+      context: .
+      dockerfile: apps/web/Dockerfile
+    ports:
+      - "127.0.0.1:8080:80"
+    restart: unless-stopped

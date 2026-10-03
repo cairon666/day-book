@@ -1,0 +1,10 @@
+{
+  "name": "day-book",
+  "private": true,
+  "version": "0.0.0",
+  "packageManager": "pnpm@11.1.1",
+  "scripts": {
+    "dev": "pnpm --filter web dev",
+    "build": "pnpm --filter web build"
+  }
+}
