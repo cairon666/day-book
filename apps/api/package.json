@@ -1,0 +1,34 @@
+{
+  "name": "api",
+  "version": "0.0.0",
+  "private": true,
+  "description": "day-book API: модульный монолит (NestJS + Prisma + PostgreSQL)",
+  "scripts": {
+    "dev": "nest start --watch",
+    "build": "nest build",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "@nestjs/common": "^11.1.6",
+    "@nestjs/core": "^11.1.6",
+    "@nestjs/platform-express": "^11.1.6",
+    "@prisma/client": "^7.0.0",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.2",
+    "zod": "^4.1.13"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "^11.0.10",
+    "@nestjs/testing": "^11.1.6",
+    "@swc/core": "^1.13.5",
+    "@types/express": "^5.0.3",
+    "@types/node": "^22.19.1",
+    "@types/supertest": "^6.0.3",
+    "prisma": "^7.0.0",
+    "supertest": "^6.3.4",
+    "typescript": "~5.9.3",
+    "unplugin-swc": "^1.5.6",
+    "vitest": "^3.2.4"
+  }
+}
