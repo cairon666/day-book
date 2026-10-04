@@ -4,7 +4,9 @@
   "version": "0.0.0",
   "packageManager": "pnpm@11.1.1",
   "scripts": {
-    "dev": "pnpm --filter web dev",
-    "build": "pnpm --filter web build"
+    "dev": "pnpm -r --parallel run dev",
+    "dev:web": "pnpm --filter web dev",
+    "dev:api": "pnpm --filter api dev",
+    "build": "pnpm -r run build"
   }
 }

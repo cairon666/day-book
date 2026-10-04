@@ -1,4 +1,6 @@
 import 'reflect-metadata';
+// Локально: подхватывает apps/api/.env (в контейнере переменные приходят из окружения).
+import 'dotenv/config';
 import { NestFactory } from '@nestjs/core';
 import { AllExceptionsFilter } from './common/filters/all-exceptions.filter';
 import { parseEnv } from './config/env';
