@@ -9,6 +9,11 @@ COPY package.json pnpm-workspace.yaml pnpm-lock.yaml ./
 COPY apps/web/package.json apps/web/package.json
 COPY apps/api/package.json apps/api/package.json
 
+# postinstall у api запускает `prisma generate` — schema и конфиг CLI
+# должны существовать уже на этом слое
+COPY apps/api/prisma apps/api/prisma
+COPY apps/api/prisma.config.ts apps/api/
+
 RUN pnpm install --frozen-lockfile
 
 COPY apps/api apps/api
