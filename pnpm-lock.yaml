@@ -25,6 +25,12 @@ importers:
       '@prisma/client':
         specifier: ^7.0.0
         version: 7.10.0(prisma@7.10.0(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(typescript@5.9.3))(typescript@5.9.3)
+      dotenv:
+        specifier: ^18.0.5
+        version: 18.0.5
+      prisma:
+        specifier: ^7.0.0
+        version: 7.10.0(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(typescript@5.9.3)
       reflect-metadata:
         specifier: ^0.2.2
         version: 0.2.2
@@ -53,12 +59,6 @@ importers:
       '@types/supertest':
         specifier: ^6.0.3
         version: 6.0.3
-      dotenv:
-        specifier: ^18.0.5
-        version: 18.0.5
-      prisma:
-        specifier: ^7.0.0
-        version: 7.10.0(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(typescript@5.9.3)
       supertest:
         specifier: ^6.3.4
         version: 6.3.4
