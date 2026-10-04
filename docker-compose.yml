@@ -10,3 +10,42 @@ services:
     ports:
       - "127.0.0.1:8080:80"
     restart: unless-stopped
+
+  api:
+    # Локально: образ собирается из исходников (day-book-api:local).
+    # На сервере: API_IMAGE=ghcr.io/<OWNER>/<REPO>/api:main
+    image: ${API_IMAGE:-day-book-api:local}
+    build:
+      context: .
+      dockerfile: apps/api/Dockerfile
+    environment:
+      DATABASE_URL: ${DATABASE_URL:-postgresql://daybook:daybook@postgres:5432/daybook}
+      PORT: 8080
+    ports:
+      - "127.0.0.1:8081:8080"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: unless-stopped
+
+  postgres:
+    image: postgres:18-alpine
+    environment:
+      POSTGRES_USER: daybook
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-daybook}
+      POSTGRES_DB: daybook
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      # Для postgres:18+ монтируем /var/lib/postgresql целиком:
+      # данные лягут в подкаталог, совместимо с будущими pg_upgrade.
+      - pgdata:/var/lib/postgresql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U daybook -d daybook"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+    restart: unless-stopped
+
+volumes:
+  pgdata:

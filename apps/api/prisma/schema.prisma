@@ -1,0 +1,11 @@
+// Prisma schema day-book API.
+// Миграции: локально `prisma migrate dev`, в контейнере — `prisma migrate deploy`.
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}

@@ -4,6 +4,9 @@ node_modules/
 # build output
 apps/*/dist/
 
+# prisma client (генерируется prisma generate)
+apps/api/src/generated/
+
 # env & secrets
 .env
 .env.*
