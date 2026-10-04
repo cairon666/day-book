@@ -11,5 +11,5 @@ export default defineConfig({
     },
   },
   // esbuild не поддерживает emitDecoratorMetadata — нужен SWC для NestJS-DI в тестах.
-  plugins: [swc.vite({ module: { type: 'es' } })],
+  plugins: [swc.vite({ module: { type: 'es6' } })],
 });
